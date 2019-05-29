@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Category</h2>
+            {% for category in categories %}
+            <div class="row">
+                <div class="col">
+                    <a href="/category/{{ category.name }}">{{ category.name }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            {% if session.get('user_google_id') %}
+            <a href="{{ url_for('add_item') }}" role="button" class="btn btn-secondary">Add item</a>
+            {% endif %}
+            <h2>Items</h2>
+            {% for item in items %}
+            <div class="row">
+                <div class="col">
+                    <a href="/category/{{ item.category.name }}/{{ item.title}}">{{ item.title }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

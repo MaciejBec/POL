@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block main %}
+
+
+<div class="container">
+<div class="col">
+    <h2>Items</h2>
+    <div class="row">
+        <div class="col">
+            <p>
+            {{ item.title }}
+            </p>
+        </div>
+        <div class="col">
+            <p>
+            {{ item.description }}
+            </p>
+        </div>
+    </div>
+     {% if session.get('user_google_id') %}
+    <a href="/category/{{ item.category.name }}/{{ item.title }}/edit-item" role="button" class="btn btn-danger">Edit</a>
+    <a href="/category/{{ item.category.name }}/{{ item.title }}/delete" role="button" class="btn btn-info">Delete</a>
+    {% endif %}
+</div>
+</div>
+
+
+{% endblock %}
