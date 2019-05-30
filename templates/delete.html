@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block main %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <h2> OK?</h2>
+        </div>
+    </div>
+<form method="post">
+    <button type="submit" class="btn btn-danger" value="0" name="del">NO</button>
+    <button type="submit" class="btn btn-info" value="1" name="del">Delete</button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block main %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Category</h2>
+        </div>
+        <div class="col">
+            <h2>Items</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ category.name }}
+        </div>
+        <div class="col">
+            {% for item in items %}
+            <a href=" /category/{{category.name}}/{{item.title}}">{{ item.title }}</a>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
